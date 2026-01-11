@@ -1,0 +1,14 @@
+import numpy as np
+
+def sample_var_std(x):
+    """
+    Compute sample variance and standard deviation.
+    """
+    sample_mean = sum(x) / len(x)
+
+    sample_variances = [(x[i]-sample_mean)**2 for i in range(len(x))]
+    sample_variance = sum(sample_variances) / (len(sample_variances)-1)
+    sample_std_deviation = sample_variance ** 0.5
+
+    return sample_variance, sample_std_deviation
+
