@@ -4,11 +4,14 @@ def sample_var_std(x):
     """
     Compute sample variance and standard deviation.
     """
-    sample_mean = sum(x) / len(x)
+    # sample_mean = sum(x) / len(x)
 
-    squared_diff = sum((x[i]-sample_mean)**2 for i in range(len(x)))
-    sample_variance = squared_diff / (len(x)-1)
-    sample_std_deviation = sample_variance ** 0.5
+    # squared_diff = sum((x[i]-sample_mean)**2 for i in range(len(x)))
+    # sample_variance = squared_diff / (len(x)-1)
+    # sample_std_deviation = sample_variance ** 0.5
 
+    # return sample_variance, sample_std_deviation
+
+    sample_variance = np.var(x, ddof=1)
+    sample_std_deviation = np.sqrt(sample_variance)
     return sample_variance, sample_std_deviation
-
