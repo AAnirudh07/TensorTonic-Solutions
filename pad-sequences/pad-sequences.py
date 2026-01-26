@@ -13,7 +13,7 @@ def pad_sequences(seqs, pad_value=0, max_len=None):
     
     output = []
     for seq in seqs:
-      padded_sequence = seq[:min(max_len, len(seq))] + [pad_value]*max(0, max_len - len(seq)) 
+      padded_sequence = seq[:max_len] + [pad_value]*max(0, max_len - len(seq)) 
       output.append(padded_sequence)
     return np.asarray(output)
     
