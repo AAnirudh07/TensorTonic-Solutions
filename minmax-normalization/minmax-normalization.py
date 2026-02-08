@@ -8,4 +8,4 @@ def minmax_scale(X, axis=0, eps=1e-12):
     maximum_values = np.max(X, axis=axis, keepdims=True)
     minimum_values = np.min(X, axis=axis, keepdims=True)
 
-    return (X - minimum_values) / (maximum_values - minimum_values + eps)
+    return (X - minimum_values) / np.maximum(maximum_values - minimum_values, eps)
